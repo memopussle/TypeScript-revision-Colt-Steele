@@ -40,7 +40,30 @@ function rando(num: number): string | number {
 
 // Anonymous function
 const colours = ["red", "orange", "yellow"];
-colours.map(color => {
-    return color.toUpperCase();
-}) // don't need to specify type of color because ts knows it will be string,-> colours array
+colours.map((color) => {
+  return color.toUpperCase();
+}); // don't need to specify type of color because ts knows it will be string,-> colours array
 // it can infer the methods which one are used for number and string
+
+// Void: return type for functions that don't return anything.
+
+function printTwice(msg: string): void {
+  console.log(msg);
+  console.log(msg);
+} // don't return anything -> void
+
+
+// Never
+// represents values that NEVER occur.
+// Never vs void: void : undeifined or null , never: a function doesn't finish executing
+function makeError(msg: string): never {
+    throw new Error(msg)
+}
+
+// function NEVER stops executing
+function gameLoop(): never {
+    while (true) {
+        console.log("GAME LOOP RUNNING")
+    }
+
+}
